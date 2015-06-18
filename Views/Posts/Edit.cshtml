@@ -1,0 +1,23 @@
+﻿@model BestBlog.Models.CreatePostViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form action="@Href("~/Posts/Edit")" method="post" id="createForm">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <input type="text" name="dateCreated" value="@Model.DateCreated" /> Date<br />
+    <input type="text" name="title" value="@Model.Title" /> Title <br />
+    <input type="text" name="tags" value="@Model.Tags" /> Tags <br />
+    <input type="text" name="body" value="@Model.Body" /> Body <br />
+    <input type="submit" name="submit" value="Submit!" /> <br />
+</form>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
